@@ -1,5 +1,3 @@
-Sure, here is the updated `README.md` file with the removal of the `space-tmhs.html` section, additional repository statistics, and interactive features.
-
 # Landing Pages for TMHS Digital
 
 [![GitHub release](https://img.shields.io/github/release/TMHSDigital/landing-pages.svg)](https://GitHub.com/TMHSDigital/landing-pages/releases/)
