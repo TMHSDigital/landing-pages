@@ -1,9 +1,16 @@
-# landing-pages
-A collection of landing pages for GitHub Pages
+Sure, here is the updated `README.md` file with the removal of the `space-tmhs.html` section, additional repository statistics, and interactive features.
 
+```markdown
 # Landing Pages for TMHS Digital
 
-This repository contains two HTML landing pages designed for TMHS Digital. Each page showcases different design and animation techniques to create engaging and interactive user experiences.
+[![GitHub release](https://img.shields.io/github/release/TMHSDigital/landing-pages.svg)](https://GitHub.com/TMHSDigital/landing-pages/releases/)
+[![GitHub issues](https://img.shields.io/github/issues/TMHSDigital/landing-pages.svg)](https://GitHub.com/TMHSDigital/landing-pages/issues/)
+[![GitHub license](https://img.shields.io/github/license/TMHSDigital/landing-pages.svg)](https://github.com/TMHSDigital/landing-pages/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/TMHSDigital/landing-pages.svg?style=social&label=Star)](https://github.com/TMHSDigital/landing-pages)
+[![Forks](https://img.shields.io/github/forks/TMHSDigital/landing-pages.svg?style=social&label=Fork)](https://github.com/TMHSDigital/landing-pages/fork)
+[![GitHub contributors](https://img.shields.io/github/contributors/TMHSDigital/landing-pages.svg)](https://GitHub.com/TMHSDigital/landing-pages/graphs/contributors/)
+
+This repository contains HTML landing pages designed for TMHS Digital. Each page showcases different design and animation techniques to create engaging and interactive user experiences.
 
 ## FutureTech Solutions Landing Page
 
@@ -23,26 +30,24 @@ The `future-tech.html` file creates a landing page for FutureTech Solutions. Thi
 ### View the File
 You can view the `future-tech.html` file [here](https://github.com/TMHSDigital/landing-pages/blob/55affd8c3190ab467ac7b5681f433d3a6800af5d/future.tech-design/future-tech.html).
 
-## TM Hospitality Strategies Landing Page
-
-### Overview
-The `space-tmhs.html` file creates a landing page for TM Hospitality Strategies. This page features a sleek design with interactive elements and animations to highlight the company's innovative services.
-
-### Key Components
-- **Custom Cursor**: The page uses a custom cursor effect to enhance interactivity.
-- **Hero Section**: A full-screen hero section with a background animation of particles and a hero content box.
-- **Services Section**: A detailed section that outlines the various services offered by the company, presented in a grid layout.
-
-### Styling
-- **Colors**: The page uses a dark background with bright, gradient text to create a visually striking contrast.
-- **Fonts**: The primary font used is Rajdhani, sans-serif, which contributes to the modern and sophisticated look.
-- **Animations**: The page includes several animations, such as a typing effect for the hero text and a parallax effect when the mouse moves.
-
-### View the File
-You can view the `space-tmhs.html` file [here](https://github.com/TMHSDigital/landing-pages/blob/55affd8c3190ab467ac7b5681f433d3a6800af5d/space.tmhs-design/space-tmhs.html).
-
 ## How to Use
 
-1. **Clone the Repository**: 
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/TMHSDigital/landing-pages.git
+   ```
+2. **Navigate to the Desired Folder**:
+   ```bash
+   cd landing-pages/future.tech-design
+   ```
+3. **Open the HTML File in a Browser**:
+   Simply open the `future-tech.html` file in your preferred web browser to view the landing page.
+
+## Technologies Used
+- **HTML5**: For structuring the content.
+- **CSS3**: For styling the content.
+- **Three.js**: For creating 3D animations.
+- **JavaScript**: For adding interactivity and animations.
+
+## License
+This project is licensed under the MIT License.
