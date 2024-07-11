@@ -3,38 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TMHS - TM Hospitality Strategies</title>
+    <title>FutureTech Solutions</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #00aaff;
-            --secondary-color: #0088cc;
-            --bg-color: #000011;
-            --text-color: #ffffff;
-        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #0a0a0a;
+            color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: none;
-        }
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary-color);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.1s ease;
         }
         .container {
             max-width: 1200px;
@@ -46,7 +28,7 @@
             width: 100%;
             z-index: 1000;
             padding: 20px 0;
-            background: rgba(0, 0, 17, 0.8);
+            background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(10px);
         }
         nav {
@@ -55,11 +37,9 @@
             align-items: center;
         }
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--primary-color), #00ffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffff;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -69,31 +49,20 @@
         }
         .nav-links a {
             text-decoration: none;
-            color: var(--text-color);
-            transition: all 0.3s ease;
-            font-size: 16px;
+            color: #ffffff;
+            transition: color 0.3s ease;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            position: relative;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: #00ffff;
         }
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             position: relative;
             overflow: hidden;
         }
@@ -108,106 +77,44 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            width: 50%;
-            padding: 40px;
-            background: rgba(0, 0, 17, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
-        }
-        .hero-image {
-            position: relative;
-            z-index: 2;
-            width: 40%;
-            height: 60vh;
-            background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
+            max-width: 50%;
+            padding: 0 20px;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
         }
         .hero-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, var(--primary-color), #00ffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+            font-weight: 300;
+            letter-spacing: 2px;
         }
         .hero-content p {
             font-size: 18px;
             margin-bottom: 30px;
-            color: var(--text-color);
-            opacity: 0;
+            font-weight: 300;
+            color: #cccccc;
         }
         .cta-button {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
+            background-color: transparent;
+            color: #00ffff;
+            padding: 12px 24px;
+            border: 2px solid #00ffff;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 170, 255, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 170, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 170, 255, 0); }
         }
         .cta-button:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        .services {
-            padding: 100px 0;
-        }
-        .services h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-            font-size: 36px;
-            text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .service-item {
-            background-color: rgba(0, 170, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 170, 255, 0.3);
-            cursor: pointer;
-        }
-        .service-item:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
-        }
-        .service-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        .section-separator {
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-            margin: 50px 0;
+            background-color: #00ffff;
+            color: #0a0a0a;
         }
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                justify-content: center;
-            }
-            .hero-content, .hero-image {
-                width: 100%;
-                margin-bottom: 30px;
+            .hero-content {
+                max-width: 100%;
             }
             .hero-content h1 {
                 font-size: 36px;
@@ -219,16 +126,14 @@
     </style>
 </head>
 <body>
-    <div class="custom-cursor"></div>
-
     <header>
         <div class="container">
             <nav>
-                <div class="logo">TMHS</div>
+                <div class="logo">FutureTech</div>
                 <div class="nav-links">
                     <a href="#home">Home</a>
-                    <a href="#services">Services</a>
                     <a href="#about">About</a>
+                    <a href="#services">Services</a>
                     <a href="#contact">Contact</a>
                 </div>
             </nav>
@@ -239,36 +144,9 @@
         <canvas id="heroCanvas"></canvas>
         <div class="container">
             <div class="hero-content">
-                <h1>TM Hospitality Strategies</h1>
-                <p id="typed-text"></p>
-                <a href="#contact" class="cta-button" id="ctaButton">Discover the Future</a>
-            </div>
-            <div class="hero-image"></div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Innovative Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <h3>AI-Driven Guest Experience</h3>
-                    <p>Leverage artificial intelligence to personalize and enhance every aspect of the guest journey.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Smart Operations Management</h3>
-                    <p>Implement IoT and data analytics for efficient, sustainable, and cost-effective operations.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Virtual Reality Training</h3>
-                    <p>Revolutionize staff training with immersive VR simulations for exceptional service delivery.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Blockchain Loyalty Programs</h3>
-                    <p>Create secure, transparent, and rewarding loyalty experiences using blockchain technology.</p>
-                </div>
+                <h1>Innovate. Transform. Excel.</h1>
+                <p>Empowering businesses with cutting-edge technology solutions for a smarter future.</p>
+                <a href="#contact" class="cta-button">Explore Our Solutions</a>
             </div>
         </div>
     </section>
@@ -280,80 +158,28 @@
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('heroCanvas'), alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        const geometry = new THREE.BufferGeometry();
-        const particlesCount = 5000;
-        const posArray = new Float32Array(particlesCount * 3);
+        const geometry = new THREE.IcosahedronGeometry(1, 1);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true });
+        const icosahedron = new THREE.Mesh(geometry, material);
+        scene.add(icosahedron);
 
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 5;
-        }
-
-        geometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.005,
-            color: 0x00aaff
-        });
-
-        const particlesMesh = new THREE.Points(geometry, material);
-        scene.add(particlesMesh);
-
-        camera.position.z = 2;
+        camera.position.z = 5;
 
         const animate = () => {
             requestAnimationFrame(animate);
-            particlesMesh.rotation.x += 0.0005;
-            particlesMesh.rotation.y += 0.0005;
+            icosahedron.rotation.x += 0.005;
+            icosahedron.rotation.y += 0.005;
             renderer.render(scene, camera);
         };
 
         animate();
 
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            const newWidth = window.innerWidth;
+            const newHeight = window.innerHeight;
+            camera.aspect = newWidth / newHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Typing effect
-        const typedTextElement = document.getElementById('typed-text');
-        const textToType = "Revolutionizing hospitality with cutting-edge strategies and innovative solutions";
-        let index = 0;
-
-        function typeText() {
-            if (index < textToType.length) {
-                typedTextElement.innerHTML += textToType.charAt(index);
-                index++;
-                setTimeout(typeText, 50);
-            }
-        }
-
-        typeText();
-
-        // Custom cursor
-        const cursor = document.querySelector('.custom-cursor');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        document.addEventListener('click', () => {
-            cursor.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                cursor.style.transform = 'scale(1)';
-            }, 100);
-        });
-
-        // Parallax effect
-        document.addEventListener('mousemove', (e) => {
-            const heroContent = document.querySelector('.hero-content');
-            const heroImage = document.querySelector('.hero-image');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-
-            heroContent.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
-            heroImage.style.transform = `translate(${-x * 20}px, ${-y * 20}px)`;
+            renderer.setSize(newWidth, newHeight);
         });
     </script>
 </body>
